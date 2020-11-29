@@ -11,6 +11,12 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import Detalleplato from './src/views/Detalleplato';
+import FormularioPlato from './src/views/FormularioPlato';
+import MenuLs from './src/views/Menu';
+import NuevaOrden from './src/views/NuevaOrden';
+import ProgresoPedido from './src/views/ProgresoPedido';
+import ResumenPedido from './src/views/ResumenPedido';
 
 function HomeScreen() {
   return (
@@ -25,8 +31,48 @@ const Stack = createStackNavigator();
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Navigator screenOptions={{ headerStyle: { backgroundColor: 'red' } }}>
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+        />
+
+        <Stack.Screen
+          name="DetallePlato"
+          component={Detalleplato}
+          options={{ title: 'Detalle del plato' }}
+        />
+
+        <Stack.Screen
+          name="FormularioPlato"
+          component={FormularioPlato}
+          options={{ title: 'Crear un Nuevo plato' }}
+        />
+
+        <Stack.Screen
+          name="Menu"
+          component={MenuLs}
+          options={{ title: 'Menu' }}
+        />
+
+        <Stack.Screen
+          name="NuevaOrden"
+          component={NuevaOrden}
+          options={{ title: 'Nueva Orden' }}
+        />
+
+        <Stack.Screen
+          name="ProgesoPedido"
+          component={ProgresoPedido}
+          options={{ title: 'Progeso Pedido' }}
+        />
+
+        <Stack.Screen
+          name="ResumenPedido"
+          component={ResumenPedido}
+          options={{ title: 'Resumen Pedido' }}
+        />
+
       </Stack.Navigator>
     </NavigationContainer>
   );
